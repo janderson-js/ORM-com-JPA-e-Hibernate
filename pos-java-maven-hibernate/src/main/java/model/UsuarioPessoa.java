@@ -5,10 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import lombok.Data;
-
 @Entity
-@Data
 public class UsuarioPessoa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,4 +16,61 @@ public class UsuarioPessoa {
 	private String email;
 	private String login;
 	private String senha;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getSobreNome() {
+		return sobreNome;
+	}
+
+	public void setSobreNome(String sobreNome) {
+		this.sobreNome = sobreNome;
+	}
+
+	public int getIdade() {
+		return Idade;
+	}
+
+	public void setIdade(int idade) {
+		Idade = idade;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 }
