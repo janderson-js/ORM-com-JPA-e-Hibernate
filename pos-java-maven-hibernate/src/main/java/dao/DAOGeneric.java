@@ -66,4 +66,9 @@ public class DAOGeneric<E> {
 
 		return lista;
 	}
+
+	public EntityManager getEntityManager() {
+		return entityManager;
+	}
+
 }
