@@ -1,5 +1,7 @@
 package posjavamavenhibernate;
 
+import java.util.List;
+
 import org.junit.Test;
 
 import dao.DAOGeneric;
@@ -76,6 +78,18 @@ public class TestHibernate {
 		UsuarioPessoa pessoa = daoGeneric.pesquisar2(6L, UsuarioPessoa.class);
 
 		daoGeneric.deletarPorId(pessoa);
+
+	}
+
+	@Test
+	public void testConsultarTodos() {
+		DAOGeneric<UsuarioPessoa> daoGeneric = new DAOGeneric<UsuarioPessoa>();
+
+		List<UsuarioPessoa> list = daoGeneric.listar(UsuarioPessoa.class);
+
+		for (UsuarioPessoa usuarioPessoa : list) {
+			System.out.println(usuarioPessoa + "\n\n");
+		}
 
 	}
 }
