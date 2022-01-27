@@ -19,9 +19,9 @@ public class TestHibernate {
 		UsuarioPessoa pessoa = new UsuarioPessoa();
 		
 		pessoa.setNome("Janderson");
-		pessoa.setSobreNome("Souza 2");
-		pessoa.setIdade(23);
-		pessoa.setEmail("janderson@gmail.com");
+		pessoa.setSobreNome("Souza 3");
+		pessoa.setIdade(45);
+		pessoa.setEmail("janderso222n@gmail.com");
 		pessoa.setLogin("teste");
 		pessoa.setSenha("123");
 
@@ -66,6 +66,16 @@ public class TestHibernate {
 		pessoa = daoGeneric.atualizar(pessoa);
 
 		System.out.println(pessoa);
+
+	}
+
+	@Test
+	public void testDeletar() {
+		DAOGeneric<UsuarioPessoa> daoGeneric = new DAOGeneric<UsuarioPessoa>();
+
+		UsuarioPessoa pessoa = daoGeneric.pesquisar2(6L, UsuarioPessoa.class);
+
+		daoGeneric.deletarPorId(pessoa);
 
 	}
 }
