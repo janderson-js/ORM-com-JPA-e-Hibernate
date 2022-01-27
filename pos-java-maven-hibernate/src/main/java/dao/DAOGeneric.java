@@ -25,4 +25,21 @@ public class DAOGeneric<E> {
 		return e;
 
 	}
+
+	public E pesquisar2(Long id, Class<E> entidade) {
+
+		E e;
+		e = (E) entityManager.find(entidade, id);
+		return e;
+
+	}
+
+	public E atualizar(E entidade) {
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
+		E atualizado = entityManager.merge(entidade);
+		transaction.commit();
+		
+		return atualizado;
+	}
 }

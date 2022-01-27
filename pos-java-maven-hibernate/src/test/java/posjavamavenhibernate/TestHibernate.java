@@ -42,4 +42,30 @@ public class TestHibernate {
 		System.out.println(pessoa);
 
 	}
+
+	@Test
+	public void testDAOGenericBuscar2() {
+		DAOGeneric<UsuarioPessoa> daoGeneric = new DAOGeneric<UsuarioPessoa>();
+
+		UsuarioPessoa pessoa = daoGeneric.pesquisar2(2L, UsuarioPessoa.class);
+
+		System.out.println(pessoa);
+
+	}
+
+	@Test
+	public void testDAOGenericAtualizar() {
+
+		DAOGeneric<UsuarioPessoa> daoGeneric = new DAOGeneric<UsuarioPessoa>();
+		
+		UsuarioPessoa pessoa = daoGeneric.pesquisar2(1L, UsuarioPessoa.class);
+		
+		pessoa.setIdade(55);
+		pessoa.setSobreNome("Atualizado");
+		
+		pessoa = daoGeneric.atualizar(pessoa);
+
+		System.out.println(pessoa);
+
+	}
 }
