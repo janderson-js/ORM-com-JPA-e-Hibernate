@@ -136,7 +136,17 @@ public class TestHibernate {
 	public void testSomaIdade() {
 		DAOGeneric<UsuarioPessoa> daoGeneric = new DAOGeneric<UsuarioPessoa>();
 
-		Long somaIdade = (Long) daoGeneric.getEntityManager().createQuery("Select  		sum(idade) from UsuarioPessoa").getSingleResult(); 
+		Long somaIdade = (Long) daoGeneric.getEntityManager().createQuery("Select sum(u.idade) from UsuarioPessoa u").getSingleResult();
+		
+		System.out.println(somaIdade);
+
+	}
+	
+	@Test
+	public void testMediaIdade() {
+		DAOGeneric<UsuarioPessoa> daoGeneric = new DAOGeneric<UsuarioPessoa>();
+
+		Double somaIdade = (Double) daoGeneric.getEntityManager().createQuery("Select avg(u.idade) from UsuarioPessoa u").getSingleResult();
 		
 		System.out.println(somaIdade);
 

@@ -12,7 +12,7 @@ public class UsuarioPessoa {
 	private Long id;
 	private String nome;
 	private String sobreNome;
-	private int Idade;
+	private int idade;
 	private String email;
 	private String login;
 	private String senha;
@@ -42,11 +42,11 @@ public class UsuarioPessoa {
 	}
 
 	public int getIdade() {
-		return Idade;
+		return idade;
 	}
 
 	public void setIdade(int idade) {
-		Idade = idade;
+		idade = idade;
 	}
 
 	public String getEmail() {
@@ -75,7 +75,7 @@ public class UsuarioPessoa {
 
 	@Override
 	public String toString() {
-		return "UsuarioPessoa [id=" + id + ", nome=" + nome + ", sobreNome=" + sobreNome + ", Idade=" + Idade
+		return "UsuarioPessoa [id=" + id + ", nome=" + nome + ", sobreNome=" + sobreNome + ", Idade=" + idade
 				+ ", email=" + email + ", login=" + login + ", senha=" + senha + "]";
 	}
 
